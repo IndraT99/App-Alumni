@@ -18,6 +18,13 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
+            $table->enum('role', ['petugas', 'alumni'])->default('alumni');
+            $table->string('foto', 255)->nullable();
+            $table->year('tahun_angkatan')->nullable();
+            $table->string('nama_usaha', 255)->nullable();
+            $table->string('nomor_telepon', 15)->nullable();
+            $table->string('link_web_usaha', 255)->nullable();
+            $table->integer('id_kategori')->nullable();
             $table->timestamps();
         });
     }
