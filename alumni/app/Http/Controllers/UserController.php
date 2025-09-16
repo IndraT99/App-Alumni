@@ -61,13 +61,13 @@ class UserController extends Controller
             'alamat' => 'required|string|max:500',
             'nis' => 'nullable|string|max:20',
             'nisn' => 'nullable|string|max:20',
-            'email' => 'required|email|unique:users,email',  // Memastikan validasi unik untuk email di tabel users
+            'email' => 'required|email|unique:users,email',  
             'password' => 'required|string|min:6',
             'tahun_angkatan' => 'nullable|digits:4',
             'nama_usaha' => 'nullable|string|max:255',
             'nomor_telepon' => 'nullable|string|max:15',
             'link_web_usaha' => 'nullable|string|max:255',
-            'kategori' => 'nullable|string|max:255',  // Menambahkan validasi kategori
+            'kategori' => 'nullable|string|max:255',  
         ]);
 
         // Simpan data user
