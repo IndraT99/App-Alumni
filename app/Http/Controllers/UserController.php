@@ -67,6 +67,7 @@ class UserController extends Controller
             'nama_usaha' => 'nullable|string|max:255',
             'nomor_telepon' => 'nullable|string|max:15',
             'link_web_usaha' => 'nullable|string|max:255',
+            'role' => 'nullable|string|in:petugas,alumni',
             'kategori' => 'nullable|string|max:255',  
         ]);
 
@@ -81,10 +82,9 @@ class UserController extends Controller
         $user->tahun_angkatan = $validatedData['tahun_angkatan'];
         $user->nama_usaha = $validatedData['nama_usaha'] ?? null;
         $user->nomor_telepon = $validatedData['nomor_telepon'] ?? null;
+        $user->role = $validatedData['role'] ?? 'alumni';
         $user->link_web_usaha = $validatedData['link_web_usaha'] ?? null;
 
-        // Menambahkan kategori dan role otomatis
-        $user->role = 'alumni';  // Atur role menjadi 'alumni'
         $user->kategori = $validatedData['kategori'] ?? null;  // Menyimpan kategori yang diberikan
 
         $user->save();

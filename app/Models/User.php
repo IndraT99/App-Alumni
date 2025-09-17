@@ -30,7 +30,7 @@ class User extends Authenticatable
         'nama_usaha',
         'nomor_telepon',
         'link_web_usaha',
-        'kategori',  // Make sure this field is added as well
+        'kategori',  
     ];
 
     /**
