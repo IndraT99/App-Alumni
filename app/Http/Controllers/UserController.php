@@ -68,6 +68,7 @@ class UserController extends Controller
             'nomor_telepon' => 'nullable|string|max:15',
             'link_web_usaha' => 'nullable|string|max:255',
             'role' => 'nullable|string|in:petugas,alumni',
+            'foto' => 'nullable|string|max:255',  // Asumsi foto disimpan sebagai URL atau path
             'kategori' => 'nullable|string|max:255',  
         ]);
 
@@ -83,6 +84,7 @@ class UserController extends Controller
         $user->nama_usaha = $validatedData['nama_usaha'] ?? null;
         $user->nomor_telepon = $validatedData['nomor_telepon'] ?? null;
         $user->role = $validatedData['role'] ?? 'alumni';
+        $user->foto = $validatedData['foto'] ?? null;
         $user->link_web_usaha = $validatedData['link_web_usaha'] ?? null;
 
         $user->kategori = $validatedData['kategori'] ?? null;  // Menyimpan kategori yang diberikan
@@ -136,6 +138,7 @@ class UserController extends Controller
             'nama_usaha' => 'nullable|string|max:255',
             'nomor_telepon' => 'nullable|string|max:15',
             'link_web_usaha' => 'nullable|string|max:255',
+            'foto' => 'nullable|string|max:255',  // Asumsi foto disimpan sebagai URL atau path
             'kategori' => 'nullable|string|max:255',
         ]);
 
@@ -162,6 +165,7 @@ class UserController extends Controller
         $user->nama_usaha = $validatedData['nama_usaha'] ?? $user->nama_usaha;
         $user->nomor_telepon = $validatedData['nomor_telepon'] ?? $user->nomor_telepon;
         $user->link_web_usaha = $validatedData['link_web_usaha'] ?? $user->link_web_usaha;
+        $user->foto = $validatedData['foto'] ?? $user->foto;
         $user->kategori = $validatedData['kategori'] ?? $user->kategori;
 
         $user->save();
